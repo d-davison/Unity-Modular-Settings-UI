@@ -2,10 +2,10 @@ using UnityEngine;
 
 namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
 {
-    public class Settings : MonoBehaviour
+    public class UserSettings : MonoBehaviour
     {
         #region Singleton
-        public static Settings Instance;
+        public static UserSettings Instance;
         private void Awake()
         {
             if (Instance && Instance != this)

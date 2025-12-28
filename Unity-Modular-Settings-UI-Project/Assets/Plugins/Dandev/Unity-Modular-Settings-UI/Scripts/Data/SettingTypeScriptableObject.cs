@@ -9,8 +9,9 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Data
     [CreateAssetMenu(fileName = "New Default Setting", menuName = "Settings/Default/New Setting")]
     public class SettingTypeScriptableObject : ScriptableObject
     {
-        public SettingType Type;
-        public SettingSwitchMethod SwitchMethod;
+        public SettingType Type = SettingType.MasterVolume;
+        public SettingSwitchMethod SwitchMethod = SettingSwitchMethod.Toggle;
+        public SettingSaveMethod SaveMethod = SettingSaveMethod.InstantSave;
         public SettingImpact Impact = SettingImpact.None;
         
         //Replace this for localization tables

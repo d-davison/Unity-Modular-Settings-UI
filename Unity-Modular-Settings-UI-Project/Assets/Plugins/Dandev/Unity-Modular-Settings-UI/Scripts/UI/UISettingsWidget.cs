@@ -7,9 +7,9 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
     public class UISettingsWidget : MonoBehaviour
     {
         [Header("References")]
-        public TMP_Text headerText;
+        [SerializeField] private TMP_Text headerText;
 
-        public void Configure(SettingTypeScriptableObject setting)
+        public virtual void Configure(SettingTypeScriptableObject setting)
         {
             headerText.text = setting.DisplayName;
         }

@@ -10,6 +10,11 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
     {
         [SerializeField] private List<UISettingsPanel> panels = new List<UISettingsPanel>();
 
+        private void OnEnable()
+        {
+            OpenPanel(0);
+        }
+
         public void OpenPanel(int panelIndex)
         {
             foreach (var panel in panels)
