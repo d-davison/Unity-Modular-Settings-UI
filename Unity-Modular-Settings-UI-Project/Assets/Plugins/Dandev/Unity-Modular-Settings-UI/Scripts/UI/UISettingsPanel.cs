@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using Dandev.Unity_Modular_Settings_UI.Scripts.Data;
+using Dandev.Unity_Modular_Settings_UI.Scripts.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,12 +17,15 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
         
         [Header("Project References")]
         [SerializeField] private UISettingsHeader headerPrefab;
-        [SerializeField] private UISettingsWidget settingPrefab;
+        [SerializeField] private UISettingsWidget_Dropdown dropdownPrefab;
+        [SerializeField] private UISettingsWidget_Slider sliderPrefab;
+        [SerializeField] private UISettingsWidget_Toggle togglePrefab;
+        [SerializeField] private UISettingsWidget_Selector selectorPrefab;
         
         [Header("Configuration")]
-        [SerializeField] private List<SettingsSection> settingTypes = new List<SettingsSection>();
+        public List<SettingsGroupScriptableObject> settingGroups = new List<SettingsGroupScriptableObject>();
         
-        private readonly bool _configured = false;
+        private bool _configured = false;
 
         private void OnEnable()
         {
@@ -39,24 +44,42 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
                 return; //We don't want to configure the panel more than once
             }
 
-            foreach (SettingsSection section in settingTypes)
+            _configured = true;
+
+            foreach (SettingsGroupScriptableObject section in settingGroups)
             {
                 UISettingsHeader header = Instantiate(headerPrefab, scrollRect.content);
-                header.Configure(section.sectionName);
+                header.Configure(section.name); //TODO better way to get the name
 
-                foreach (var setting in section.settingTypes)
+                foreach (SettingTypeScriptableObject setting in section.Settings)
                 {
-                    UISettingsWidget widget = Instantiate(settingPrefab, scrollRect.content);
+                    UISettingsWidget prefab = null;
+                    
+                    switch (setting.SwitchMethod)
+                    {
+                        case SettingSwitchMethod.Toggle:
+                            prefab = togglePrefab;
+                            break;
+                        case SettingSwitchMethod.Slider_1_to_100:
+                            prefab = sliderPrefab;
+                            break;
+                        case SettingSwitchMethod.Slider_0_to_1:
+                            prefab = sliderPrefab;
+                            break;
+                        case SettingSwitchMethod.Options_Dropdown:
+                            prefab = dropdownPrefab;
+                            break;
+                        case SettingSwitchMethod.Options_Selector:
+                            prefab = selectorPrefab;
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                    
+                    UISettingsWidget widget = Instantiate(prefab, scrollRect.content);
                     widget.Configure(setting);
                 }
             }
         }
-    }
-
-    [System.Serializable]
-    public class SettingsSection
-    {
-        public string sectionName;
-        public List<SettingTypeScriptableObject> settingTypes = new List<SettingTypeScriptableObject>();
     }
 }

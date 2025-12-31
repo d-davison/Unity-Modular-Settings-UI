@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 5968004381522002245}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
@@ -448,8 +448,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollRect: {fileID: 3421042830688391468}
   headerPrefab: {fileID: 5813592039569344790, guid: e2fd4c596d1f94f4387975c0e36419de, type: 3}
-  settingPrefab: {fileID: 4133719567024764500, guid: 75c8cb5e7c8d88c4eb1f5b0b67342b16, type: 3}
-  settingTypes: []
+  dropdownPrefab: {fileID: 7022973678133239049, guid: 44779e3c2877117419322aef4cd492ff, type: 3}
+  sliderPrefab: {fileID: 1122864226253624597, guid: 02f9ea9cbfdfac3428df39b2be0126f3, type: 3}
+  togglePrefab: {fileID: 241288978844925287, guid: 0fea48c416227f941a1b51e03bf6e65d, type: 3}
+  selectorPrefab: {fileID: 1901851411822781295, guid: ced5c23e7b2757641a42bd916415d5e2, type: 3}
+  settingGroups: []
 --- !u!1 &8804895545101896893
 GameObject:
   m_ObjectHideFlags: 0
