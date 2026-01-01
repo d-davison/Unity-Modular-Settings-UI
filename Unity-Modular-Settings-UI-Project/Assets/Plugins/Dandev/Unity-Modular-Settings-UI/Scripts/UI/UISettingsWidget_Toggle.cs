@@ -1,4 +1,4 @@
-using Dandev.Unity_Modular_Settings_UI.Scripts.Data;
+using Dandev.Unity_Modular_Settings_UI.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,11 +8,20 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
     {
         [SerializeField] private Toggle toggle;
         
-        public override void Configure(SettingTypeScriptableObject setting)
+        private UserSetting_Bool _userSettingBool;
+        
+        public override void Configure(UserSetting setting)
         {
             base.Configure(setting);
             
-            //toggle.isOn = setting.
+            _userSettingBool = setting as UserSetting_Bool;
+            if (_userSettingBool == null)
+            {
+                Debug.LogError($"UserSetting_Bool is null for {setting.settingType}");
+                return;
+            }
+            
+            toggle.isOn = _userSettingBool.Value;
         }
     }
 }

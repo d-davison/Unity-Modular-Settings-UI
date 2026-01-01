@@ -987,11 +987,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2062757303921961253, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2062757303921961253, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2893462813608620045, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_Pivot.x
@@ -1079,19 +1079,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3782351261156570812, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782351261156570812, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782351261156570812, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 6755027174113237562, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_Name
       value: UI_SettingsPanel (Shooter-Example) (Gameplay)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755027174113237562, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1427,11 +1431,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2062757303921961253, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2062757303921961253, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2893462813608620045, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_Pivot.x
@@ -1519,19 +1523,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3782351261156570812, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782351261156570812, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782351261156570812, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 6755027174113237562, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_Name
       value: UI_SettingsPanel (Shooter-Example) (Audio)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755027174113237562, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8001946915135543043, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: settingGroups.Array.size
@@ -2401,11 +2409,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2062757303921961253, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2062757303921961253, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2893462813608620045, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_Pivot.x
@@ -2493,19 +2501,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3782351261156570812, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782351261156570812, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782351261156570812, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 6755027174113237562, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_Name
       value: UI_SettingsPanel (Shooter-Example) (General)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755027174113237562, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3692,11 +3704,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2062757303921961253, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2062757303921961253, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2893462813608620045, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_Pivot.x
@@ -3784,19 +3796,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3782351261156570812, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782351261156570812, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3782351261156570812, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 6755027174113237562, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
       propertyPath: m_Name
       value: UI_SettingsPanel (Shooter-Example) (Graphics)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755027174113237562, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

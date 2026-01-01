@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Dandev.Unity_Modular_Settings_UI.Scripts.Data;
+using Dandev.Unity_Modular_Settings_UI.Scripts.Managers;
 using Dandev.Unity_Modular_Settings_UI.Scripts.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
@@ -77,7 +78,8 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
                     }
                     
                     UISettingsWidget widget = Instantiate(prefab, scrollRect.content);
-                    widget.Configure(setting);
+                    UserSetting userSetting = UserSettings.Instance.GetSetting(setting.Type);
+                    widget.Configure(userSetting);
                 }
             }
         }

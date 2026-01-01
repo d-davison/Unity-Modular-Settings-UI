@@ -1,4 +1,4 @@
-using Dandev.Unity_Modular_Settings_UI.Scripts.Data;
+using Dandev.Unity_Modular_Settings_UI.Scripts.Managers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,7 +11,7 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
         [SerializeField] private Button leftArrowButton;
         [SerializeField] private Button rightArrowButton;
         
-        public override void Configure(SettingTypeScriptableObject setting)
+        public override void Configure(UserSetting setting)
         {
             base.Configure(setting);
             

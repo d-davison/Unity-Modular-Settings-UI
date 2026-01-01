@@ -1,4 +1,4 @@
-using Dandev.Unity_Modular_Settings_UI.Scripts.Data;
+using Dandev.Unity_Modular_Settings_UI.Scripts.Managers;
 using TMPro;
 using UnityEngine;
 
@@ -9,9 +9,9 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
         [Header("References")]
         [SerializeField] private TMP_Text headerText;
 
-        public virtual void Configure(SettingTypeScriptableObject setting)
+        public virtual void Configure(UserSetting setting)
         {
-            headerText.text = setting.DisplayName;
+            headerText.text = setting.SettingTypeScriptableObject.DisplayName;
         }
     }
 }

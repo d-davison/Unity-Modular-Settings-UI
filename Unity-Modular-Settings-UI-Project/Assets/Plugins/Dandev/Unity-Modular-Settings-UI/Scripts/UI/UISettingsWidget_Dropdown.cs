@@ -1,7 +1,6 @@
-using Dandev.Unity_Modular_Settings_UI.Scripts.Data;
+using Dandev.Unity_Modular_Settings_UI.Scripts.Managers;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
 {
@@ -9,14 +8,24 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
     {
         [SerializeField] private TMP_Dropdown dropdown;
         
-        public override void Configure(SettingTypeScriptableObject setting)
+        private UserSetting_MultipleChoice _userSettingMultipleChoice;
+        
+        public override void Configure(UserSetting setting)
         {
             base.Configure(setting);
 
             dropdown.value = 0;
             dropdown.ClearOptions();
-            //TODO
-            //dropdown.AddOptions();
+            
+            _userSettingMultipleChoice = setting as UserSetting_MultipleChoice;
+            if (_userSettingMultipleChoice == null)
+            {
+                Debug.LogError($"UserSetting_MultipleChoice is null for {setting.settingType}");
+                return;
+            }
+            
+            var options = _userSettingMultipleChoice.GetOptions();
+            dropdown.AddOptions(_userSettingMultipleChoice.GetOptions());
         }
     }
 }

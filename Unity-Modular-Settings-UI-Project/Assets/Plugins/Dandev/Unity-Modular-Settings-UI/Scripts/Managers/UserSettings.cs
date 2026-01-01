@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Dandev.Unity_Modular_Settings_UI.Scripts.Data;
+using Dandev.Unity_Modular_Settings_UI.Scripts.Utilities;
 using UnityEngine;
 
 namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
@@ -28,6 +29,11 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
         [SerializeField] private List<SettingsGroupScriptableObject> settingGroups = new List<SettingsGroupScriptableObject>();
         
         private UserSettingsData _userSettingsData;
+
+        public UserSetting GetSetting(SettingType settingType)
+        {
+            return _userSettingsData.GetSetting(settingType);
+        }
 
         private void InitialiseUserSettingsData()
         {
