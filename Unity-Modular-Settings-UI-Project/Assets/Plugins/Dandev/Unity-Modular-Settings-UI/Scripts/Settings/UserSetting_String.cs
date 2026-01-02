@@ -1,14 +1,15 @@
 ﻿using Dandev.Unity_Modular_Settings_UI.Scripts.Data;
 using UnityEngine;
 
-namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
+namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
 {
     public class UserSetting_String : UserSetting
     {
         public string Value;
         
-        public UserSetting_String(SettingTypeScriptableObject settingTypeScriptableObject) : base(settingTypeScriptableObject)
+        public override void InitialiseFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject)
         {
+            base.InitialiseFromScriptableObject(settingTypeScriptableObject);
             Value = settingTypeScriptableObject.AsString;
         }
 

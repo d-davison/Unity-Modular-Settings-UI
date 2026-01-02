@@ -1,14 +1,15 @@
 using Dandev.Unity_Modular_Settings_UI.Scripts.Data;
 using UnityEngine;
 
-namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
+namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
 {
     public class UserSetting_Bool : UserSetting
     {
         public bool Value;
         
-        public UserSetting_Bool(SettingTypeScriptableObject settingTypeScriptableObject) : base(settingTypeScriptableObject)
+        public override void InitialiseFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject)
         {
+            base.InitialiseFromScriptableObject(settingTypeScriptableObject);
             Value = settingTypeScriptableObject.AsBool;
         }
 

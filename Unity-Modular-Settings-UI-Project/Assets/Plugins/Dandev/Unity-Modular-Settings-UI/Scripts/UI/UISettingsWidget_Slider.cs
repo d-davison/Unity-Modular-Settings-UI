@@ -1,5 +1,5 @@
 using System;
-using Dandev.Unity_Modular_Settings_UI.Scripts.Managers;
+using Dandev.Unity_Modular_Settings_UI.Scripts.Settings;
 using Dandev.Unity_Modular_Settings_UI.Scripts.Utilities;
 using TMPro;
 using UnityEngine;
@@ -39,12 +39,12 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
                 _ => throw new ArgumentOutOfRangeException()
             };
             slider.maxValue = maxValue;
-            slider.value = setting.SettingTypeScriptableObject.AsFloat;
+            slider.value = _userSettingFloat.Value;
             
             slider.onValueChanged.RemoveAllListeners();
             slider.onValueChanged.AddListener(OnSliderValueChanged);
             
-            OnSliderValueChanged(setting.SettingTypeScriptableObject.AsFloat);
+            OnSliderValueChanged(_userSettingFloat.Value);
         }
         
         private void OnDestroy()
@@ -68,6 +68,8 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
                 _ => throw new ArgumentOutOfRangeException()
             };
             sliderLabel.text = sliderText;
+            
+            _userSettingFloat.ChangeSetting(value);
         }
         
         string LogWarningAndReturnEmpty(float val) 

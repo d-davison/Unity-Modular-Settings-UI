@@ -1,4 +1,4 @@
-using Dandev.Unity_Modular_Settings_UI.Scripts.Managers;
+using Dandev.Unity_Modular_Settings_UI.Scripts.Settings;
 using TMPro;
 using UnityEngine;
 
