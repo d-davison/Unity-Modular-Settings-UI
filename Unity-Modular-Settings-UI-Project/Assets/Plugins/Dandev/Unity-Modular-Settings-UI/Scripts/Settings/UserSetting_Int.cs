@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
 {
-    public class UserSetting_MultipleChoice : UserSetting
+    public class UserSetting_Int : UserSetting
     {
         public int Value;
         public string ValueAsString;
         
-        private List<string> _options;
+        protected List<string> _options;
         
         public override void InitialiseFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject)
         {

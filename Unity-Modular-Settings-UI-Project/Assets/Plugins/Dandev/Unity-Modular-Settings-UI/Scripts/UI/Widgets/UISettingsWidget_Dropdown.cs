@@ -8,24 +8,30 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
     {
         [SerializeField] private TMP_Dropdown dropdown;
         
-        private UserSetting_MultipleChoice _userSettingMultipleChoice;
+        private UserSetting_Int _userSettingInt;
         
         public override void Configure(UserSetting setting)
         {
+            if (setting == null)
+            {
+                Debug.LogError("Setting is null in UISettingsWidget_Dropdown");
+                return;
+            }
+            
             base.Configure(setting);
 
             dropdown.value = 0;
             dropdown.ClearOptions();
             
-            _userSettingMultipleChoice = setting as UserSetting_MultipleChoice;
-            if (_userSettingMultipleChoice == null)
+            _userSettingInt = setting as UserSetting_Int;
+            if (_userSettingInt == null)
             {
                 Debug.LogError($"UserSetting_MultipleChoice is null for {setting.settingType}");
                 return;
             }
             
-            var options = _userSettingMultipleChoice.GetOptions();
-            dropdown.AddOptions(_userSettingMultipleChoice.GetOptions());
+            var options = _userSettingInt.GetOptions();
+            dropdown.AddOptions(options);
         }
     }
 }

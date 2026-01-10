@@ -28,7 +28,7 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
         
         public static UserSetting Create(SettingTypeScriptableObject settingSO, string json = null)
         {
-            var targetClass = SettingUtilities.GetClassType(settingSO.SettingDataType);
+            var targetClass = SettingUtilities.GetClassType(settingSO.SettingDataType, settingSO.Type);
 
             UserSetting setting;
             if (string.IsNullOrEmpty(json))

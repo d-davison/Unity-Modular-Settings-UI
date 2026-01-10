@@ -17,14 +17,19 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
     public class UserSettingsData
     {
         private Dictionary<SettingType, UserSetting> _settingsDict;
+        private List<SettingTypeScriptableObject> _settingsScriptableObjects;
         
         public void InitialiseDefaultSettingsData(List<SettingsGroupScriptableObject> settingGroups)
         {
-            _settingsDict = settingGroups
-                .SelectMany(group => group.Settings) 
-                .Select(s => UserSetting.Create(s)) // Unified call
-                .Where(s => s != null)
-                .ToDictionary(s => s.settingType);
+            _settingsScriptableObjects = settingGroups.SelectMany(group => group.Settings).ToList();
+
+            if (_settingsDict == null)
+            {
+                _settingsDict = _settingsScriptableObjects 
+                    .Select(s => UserSetting.Create(s)) // Unified call
+                    .Where(s => s != null)
+                    .ToDictionary(s => s.settingType);
+            }
         }
 
         public void LoadFromJson(string json, List<SettingsGroupScriptableObject> settingGroups)
@@ -68,7 +73,18 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
         
         public T GetSetting<T>(SettingType settingType) where T : UserSetting
         {
-            return _settingsDict.TryGetValue(settingType, out var setting) ? setting as T : null;
+            if (_settingsDict.TryGetValue(settingType, out var setting))
+            {
+                return setting as T;
+            }
+            
+            Debug.LogWarning($"Tried to retrieve setting {settingType} but it was null, creating new.");
+            
+            SettingTypeScriptableObject settingSO = _settingsScriptableObjects.Find(s => s.Type == settingType);
+            UserSetting newSetting = UserSetting.Create(settingSO);
+            _settingsDict.Add(newSetting.settingType, newSetting);
+            
+            return newSetting as T;
         }
         
         [System.Serializable]

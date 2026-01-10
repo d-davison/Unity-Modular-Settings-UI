@@ -40,7 +40,7 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
 
         public bool GetBool(SettingType type) => GetSetting<UserSetting_Bool>(type)?.Value ?? false;
         public float GetFloat(SettingType type) => GetSetting<UserSetting_Float>(type)?.Value ?? 0f;
-        public int GetInt(SettingType type) => GetSetting<UserSetting_MultipleChoice>(type)?.Value ?? 0;
+        public int GetInt(SettingType type) => GetSetting<UserSetting_Int>(type)?.Value ?? 0;
         public string GetString(SettingType type) => GetSetting<UserSetting_String>(type)?.Value ?? string.Empty;
         
         private void InitialiseUserSettingsData()
@@ -54,6 +54,7 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
                 {
                     _userSettingsData = new UserSettingsData();
                     _userSettingsData.LoadFromJson(File.ReadAllText(filePath), settingGroups);
+                    _userSettingsData.InitialiseDefaultSettingsData(settingGroups);
                 }
                 catch (Exception e)
                 {

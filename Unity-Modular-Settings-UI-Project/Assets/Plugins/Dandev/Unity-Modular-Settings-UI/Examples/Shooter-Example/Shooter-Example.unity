@@ -1098,6 +1098,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8001946915135543043, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
+      propertyPath: settingGroups.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001946915135543043, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
+      propertyPath: 'settingGroups.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 0327a8c3ce863104ebd32a2f12e5bb35, type: 2}
+    - target: {fileID: 8001946915135543043, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
+      propertyPath: 'settingGroups.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a42409fcfd879f468162875ba86c433, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2656,6 +2668,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8001946915135543043, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
+      propertyPath: settingGroups.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001946915135543043, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
+      propertyPath: 'settingGroups.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c02cc727f98942949a4cee23a84702c4, type: 2}
+    - target: {fileID: 8001946915135543043, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
+      propertyPath: 'settingGroups.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f12d4ca41c517c499f27e75fd135ed2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4085,6 +4109,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8001946915135543043, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
+      propertyPath: settingGroups.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001946915135543043, guid: 57a9256a58e2aed42b6019ae25b12d41, type: 3}
+      propertyPath: 'settingGroups.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 66c56b60b0375a14394f38eca3ac79c9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
