@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0bdd48d3ff4bf14ba1a876762702445, type: 3}
-  m_Name: Graphics_Resolution
+  m_Name: Graphics_WindowMode
   m_EditorClassIdentifier: 
-  DisplayName: Resolution
+  DisplayName: Windowed Mode
   Description: The Setting Description
-  Type: 6
+  Type: 7
   SwitchMethod: 3
   SaveMethod: 0
   Impact: 0

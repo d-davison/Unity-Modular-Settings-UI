@@ -31,6 +31,8 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
         
         [SerializeField] private List<SettingsGroupScriptableObject> settingGroups = new List<SettingsGroupScriptableObject>();
         
+        private Dictionary<SettingType, List<Action>> _settingsDict = new Dictionary<SettingType, List<Action>>();
+        
         private UserSettingsData _userSettingsData;
         
         public T GetSetting<T>(SettingType settingType) where T : UserSetting
@@ -42,6 +44,33 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
         public float GetFloat(SettingType type) => GetSetting<UserSetting_Float>(type)?.Value ?? 0f;
         public int GetInt(SettingType type) => GetSetting<UserSetting_Int>(type)?.Value ?? 0;
         public string GetString(SettingType type) => GetSetting<UserSetting_String>(type)?.Value ?? string.Empty;
+
+        #region Triggers
+        public void AddTrigger(SettingType type, Action callback)
+        {
+            if (!_settingsDict.ContainsKey(type))
+            {
+                _settingsDict.Add(type, new List<Action>());
+            }
+            
+            _settingsDict[type].Add(callback);
+        }
+        
+        public void RemoveTrigger(SettingType type, Action callback)
+        {
+            if (!_settingsDict.TryGetValue(type, out var callbacks)) return;
+            callbacks.Remove(callback);
+        }
+
+        public void TriggerCallbacks(SettingType type)
+        {
+            if (!_settingsDict.TryGetValue(type, out var callbacks)) return;
+            foreach (var callback in callbacks)
+            {
+                callback.Invoke();
+            }
+        }
+        #endregion
         
         private void InitialiseUserSettingsData()
         {

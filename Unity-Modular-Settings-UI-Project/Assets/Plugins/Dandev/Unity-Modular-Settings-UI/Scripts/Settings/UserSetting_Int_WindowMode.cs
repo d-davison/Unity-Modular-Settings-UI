@@ -1,12 +1,12 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Dandev.Unity_Modular_Settings_UI.Scripts.Data;
 using UnityEngine;
 
 namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
 {
-    public class UserSetting_Int_Resolution : UserSetting_Int
+    public class UserSetting_Int_WindowMode : UserSetting_Int
     {
-        private Resolution[] _resolutions;
+        private readonly List<FullScreenMode> _modes = new List<FullScreenMode>();
         
         public override void InitialiseFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject)
         {
@@ -17,24 +17,24 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
         {
             base.ChangeSetting(newValue);
             
-            Resolution targetResolution = _resolutions[Value];
-            
-            Debug.Log($"Setting resolution to {targetResolution.width} x {targetResolution.height}");
-            Screen.SetResolution(targetResolution.width, targetResolution.height, Screen.fullScreen);
+            FullScreenMode targetMode = _modes[Value];
+            Screen.fullScreenMode = targetMode;
+            Debug.Log($"Setting window mode to {targetMode}");
         }
 
         public override List<string> GetOptions()
         {
-            _resolutions = Screen.resolutions;
+            if (_options != null && _options.Count > 0)
+                return _options;
             
             _options ??= new List<string>();
             _options.Clear();
+            
+            _modes.Add(FullScreenMode.ExclusiveFullScreen);
+            _modes.Add(FullScreenMode.FullScreenWindow);
+            _modes.Add(FullScreenMode.Windowed);
 
-            foreach (Resolution res in _resolutions)
-            {
-                string resOption = res.width + " x " + res.height + " (" + res.refreshRateRatio + "Hz)";
-                _options.Add(resOption);
-            }
+            _options.AddRange(_modes.ConvertAll(mode => mode.ToString()));
 
             return _options;
         }

@@ -1,5 +1,6 @@
 using System;
 using Dandev.Unity_Modular_Settings_UI.Scripts.Data;
+using Dandev.Unity_Modular_Settings_UI.Scripts.Managers;
 using Dandev.Unity_Modular_Settings_UI.Scripts.Utilities;
 
 namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
@@ -23,7 +24,7 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
         
         public virtual void ChangeSetting<T>(T newValue)
         {
-
+            UserSettings.Instance.TriggerCallbacks(settingType);
         }
         
         public static UserSetting Create(SettingTypeScriptableObject settingSO, string json = null)

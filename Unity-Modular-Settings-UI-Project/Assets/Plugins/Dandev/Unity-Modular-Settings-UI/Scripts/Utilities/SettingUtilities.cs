@@ -11,6 +11,8 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Utilities
             {
                 case SettingType.Resolution:
                     return typeof(UserSetting_Int_Resolution);
+                case SettingType.WindowMode:
+                    return typeof(UserSetting_Int_WindowMode);
             }
             
             //Defaults
