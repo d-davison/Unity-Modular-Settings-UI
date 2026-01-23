@@ -9,6 +9,7 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Utilities
         MasterVolume,
         MusicVolume,
         UIVolume,
+        SFXVolume,
         AudioOutputDevice,
         
         //Voice

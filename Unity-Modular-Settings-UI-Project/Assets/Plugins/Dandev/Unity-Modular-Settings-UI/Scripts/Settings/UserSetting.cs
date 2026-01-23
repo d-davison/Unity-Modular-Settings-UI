@@ -11,11 +11,27 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
         public SettingType settingType;
         public SettingDataType settingDataType;
         
+        //TODO: Remove this once we have a better way of handling this data. We don't want this hanging around.
         [NonSerialized] public SettingTypeScriptableObject SettingTypeScriptableObject;
         
         public UserSetting() { }
         
+        /// <summary>
+        /// Initialise the setting from the SettingTypeScriptableObject. Used when we want to create a new instance of the setting.
+        /// </summary>
+        /// <param name="settingTypeScriptableObject"></param>
         public virtual void InitialiseFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject)
+        {
+            SettingTypeScriptableObject = settingTypeScriptableObject;
+            settingType = settingTypeScriptableObject.Type;
+            settingDataType = settingTypeScriptableObject.SettingDataType;
+        }
+
+        /// <summary>
+        /// Get data from the SettingTypeScriptableObject. Used when we want to load a setting from JSON.
+        /// </summary>
+        /// <param name="settingTypeScriptableObject"></param>
+        public virtual void GetDataFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject)
         {
             SettingTypeScriptableObject = settingTypeScriptableObject;
             settingType = settingTypeScriptableObject.Type;

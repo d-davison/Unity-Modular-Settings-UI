@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Voice Volume
   Description: The Setting Description
-  Type: 4
+  Type: 5
   SwitchMethod: 1
   SaveMethod: 0
   Impact: 0
@@ -23,3 +23,6 @@ MonoBehaviour:
   AsFloat: 100
   AsInt: 0
   AsString: 
+  AsFloatLowest: 0
+  AsFloatHighest: 100
+  AsFloatUsePercentage: 0

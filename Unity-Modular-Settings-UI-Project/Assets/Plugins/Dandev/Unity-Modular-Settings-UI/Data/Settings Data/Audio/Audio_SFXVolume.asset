@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0bdd48d3ff4bf14ba1a876762702445, type: 3}
-  m_Name: Audio_MusicVolume
+  m_Name: Audio_SFXVolume
   m_EditorClassIdentifier: 
-  DisplayName: Music Volume
+  DisplayName: SFX Volume
   Description: The Setting Description
-  Type: 1
+  Type: 3
   SwitchMethod: 1
   SaveMethod: 0
   Impact: 0

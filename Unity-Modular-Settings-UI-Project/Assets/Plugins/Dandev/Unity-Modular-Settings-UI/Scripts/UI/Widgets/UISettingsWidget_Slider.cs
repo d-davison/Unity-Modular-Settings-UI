@@ -27,18 +27,8 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
             }
             
             _settingSwitchMethod = setting.SettingTypeScriptableObject.SwitchMethod;
-            int maxValue = _settingSwitchMethod switch
-            {
-                SettingSwitchMethod.Slider_1_to_100 => 100,
-                SettingSwitchMethod.Slider_0_to_1   => 1,
-    
-                SettingSwitchMethod.Toggle or 
-                SettingSwitchMethod.Options_Dropdown or 
-                SettingSwitchMethod.Options_Selector => 0,
-    
-                _ => throw new ArgumentOutOfRangeException()
-            };
-            slider.maxValue = maxValue;
+            slider.minValue = _userSettingFloat.SettingTypeScriptableObject.AsFloatLowest;
+            slider.maxValue = _userSettingFloat.SettingTypeScriptableObject.AsFloatHighest;
             slider.value = _userSettingFloat.Value;
             
             slider.onValueChanged.RemoveAllListeners();
@@ -55,18 +45,10 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
         private void OnSliderValueChanged(float value)
         {
             string sliderText = "";
-            
-            sliderText = _settingSwitchMethod switch
-            {
-                SettingSwitchMethod.Slider_1_to_100 => Mathf.RoundToInt(value) + "%",
-                SettingSwitchMethod.Slider_0_to_1   => value.ToString("P1"), // Using the 1 decimal place percentage from before
-    
-                SettingSwitchMethod.Toggle or 
-                SettingSwitchMethod.Options_Dropdown or 
-                SettingSwitchMethod.Options_Selector => LogWarningAndReturnEmpty(value),
-    
-                _ => throw new ArgumentOutOfRangeException()
-            };
+
+            sliderText = _userSettingFloat.SettingTypeScriptableObject.AsFloatUsePercentage
+                ? Mathf.RoundToInt(value) + "%"
+                : Mathf.RoundToInt(value).ToString();
             sliderLabel.text = sliderText;
             
             _userSettingFloat.ChangeSetting(value);

@@ -26,5 +26,10 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Data
         public float AsFloat = 0f;
         public int AsInt = 0;
         public string AsString = "";
+
+        [Header("Slider Settings")]
+        public int AsFloatLowest = 0;
+        public int AsFloatHighest = 100;
+        public bool AsFloatUsePercentage = false;
     }
 }

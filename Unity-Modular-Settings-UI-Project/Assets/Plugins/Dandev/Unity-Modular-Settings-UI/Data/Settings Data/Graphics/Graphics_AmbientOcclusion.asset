@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0bdd48d3ff4bf14ba1a876762702445, type: 3}
-  m_Name: Audio_MusicVolume
+  m_Name: Graphics_AmbientOcclusion
   m_EditorClassIdentifier: 
-  DisplayName: Music Volume
+  DisplayName: Ambient Occlusion
   Description: The Setting Description
-  Type: 1
-  SwitchMethod: 1
+  Type: 19
+  SwitchMethod: 0
   SaveMethod: 0
   Impact: 0
-  SettingDataType: 1
-  AsBool: 0
-  AsFloat: 100
+  SettingDataType: 0
+  AsBool: 1
+  AsFloat: 0
   AsInt: 0
   AsString: 
   AsFloatLowest: 0
   AsFloatHighest: 100
-  AsFloatUsePercentage: 1
+  AsFloatUsePercentage: 0

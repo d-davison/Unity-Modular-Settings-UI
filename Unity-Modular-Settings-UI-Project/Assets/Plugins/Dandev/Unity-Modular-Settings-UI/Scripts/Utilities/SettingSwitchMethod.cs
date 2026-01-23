@@ -11,14 +11,9 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Utilities
         Toggle,
         
         /// <summary>
-        /// Slider for numeric values between 1 and 100
+        /// Slider for numeric values between 2 values
         /// </summary>
-        Slider_1_to_100,
-        
-        /// <summary>
-        /// Slider for numeric values between 0 and 1
-        /// </summary>
-        Slider_0_to_1,
+        Slider,
         
         /// <summary>
         /// Dropdown for selecting an option from a list of options

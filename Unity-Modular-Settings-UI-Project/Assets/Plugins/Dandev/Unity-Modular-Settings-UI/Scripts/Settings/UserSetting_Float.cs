@@ -10,6 +10,7 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
         public override void InitialiseFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject)
         {
             base.InitialiseFromScriptableObject(settingTypeScriptableObject);
+            
             Value = settingTypeScriptableObject.AsFloat;
         }
 

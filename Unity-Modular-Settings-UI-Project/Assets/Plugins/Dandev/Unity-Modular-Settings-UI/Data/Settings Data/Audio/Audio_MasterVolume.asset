@@ -23,3 +23,6 @@ MonoBehaviour:
   AsFloat: 100
   AsInt: 0
   AsString: 
+  AsFloatLowest: 0
+  AsFloatHighest: 100
+  AsFloatUsePercentage: 1

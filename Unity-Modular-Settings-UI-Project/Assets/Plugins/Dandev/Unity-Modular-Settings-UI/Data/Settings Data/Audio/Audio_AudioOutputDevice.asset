@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Audio Ouput Device
   Description: The Setting Description
-  Type: 3
+  Type: 4
   SwitchMethod: 3
   SaveMethod: 0
   Impact: 0
@@ -23,3 +23,6 @@ MonoBehaviour:
   AsFloat: 100
   AsInt: 0
   AsString: 0
+  AsFloatLowest: 0
+  AsFloatHighest: 100
+  AsFloatUsePercentage: 0

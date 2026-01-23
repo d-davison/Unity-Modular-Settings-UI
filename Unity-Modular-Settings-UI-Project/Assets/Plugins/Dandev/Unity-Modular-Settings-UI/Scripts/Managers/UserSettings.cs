@@ -4,6 +4,7 @@ using System.IO;
 using Dandev.Unity_Modular_Settings_UI.Scripts.Data;
 using Dandev.Unity_Modular_Settings_UI.Scripts.Settings;
 using Dandev.Unity_Modular_Settings_UI.Scripts.Utilities;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
@@ -23,6 +24,7 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
                 InitialiseUserSettingsData();
+                InitialiseExtraComponents();
             }
         }
         #endregion
@@ -34,6 +36,7 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
         private Dictionary<SettingType, List<Action>> _settingsDict = new Dictionary<SettingType, List<Action>>();
         
         private UserSettingsData _userSettingsData;
+        private UserSettingsApplier _userSettingsApplier;
         
         public T GetSetting<T>(SettingType settingType) where T : UserSetting
         {
@@ -98,6 +101,11 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
             {
                 InitialiseDefaultSettingsData();
             }
+        }
+        
+        private void InitialiseExtraComponents()
+        {
+            _userSettingsApplier = this.AddComponent<UserSettingsApplier>();
         }
         
         private void InitialiseDefaultSettingsData()

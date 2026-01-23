@@ -62,10 +62,7 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
                         case SettingSwitchMethod.Toggle:
                             prefab = togglePrefab;
                             break;
-                        case SettingSwitchMethod.Slider_1_to_100:
-                            prefab = sliderPrefab;
-                            break;
-                        case SettingSwitchMethod.Slider_0_to_1:
+                        case SettingSwitchMethod.Slider:
                             prefab = sliderPrefab;
                             break;
                         case SettingSwitchMethod.Options_Dropdown:
