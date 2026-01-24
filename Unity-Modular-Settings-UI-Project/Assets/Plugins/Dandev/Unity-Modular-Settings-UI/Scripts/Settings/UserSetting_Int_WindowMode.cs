@@ -8,15 +8,17 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
     {
         private readonly List<FullScreenMode> _modes = new List<FullScreenMode>();
         
-        public override void InitialiseFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject)
+        public override void InitialiseFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject, bool setValue)
         {
-            base.InitialiseFromScriptableObject(settingTypeScriptableObject);
+            base.InitialiseFromScriptableObject(settingTypeScriptableObject, setValue);
+            ChangeSetting(Value);
         }
 
         public override void ChangeSetting<T>(T newValue)
         {
             base.ChangeSetting(newValue);
             
+            GetOptions();
             FullScreenMode targetMode = _modes[Value];
             Screen.fullScreenMode = targetMode;
             Debug.Log($"Setting window mode to {targetMode}");

@@ -33,6 +33,7 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
             var options = _userSettingInt.GetOptions();
             dropdown.AddOptions(options);
             
+            dropdown.value = _userSettingInt.Value;
             dropdown.onValueChanged.AddListener(OnValueChanged);
         }
 

@@ -10,6 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fb9f6d465585684e982b6b57015a70f, type: 3}
-  m_Name: Controls
+  m_Name: Controls_Gamepad
   m_EditorClassIdentifier: 
-  Settings: []
+  Settings:
+  - {fileID: 11400000, guid: f0f9055f1d2a93b4a9297f3797262ad2, type: 2}
+  - {fileID: 11400000, guid: 3537fa806260c58419bee1fa0187ae7d, type: 2}
+  - {fileID: 11400000, guid: 7961353e0a1096d4793a3d91d8809480, type: 2}

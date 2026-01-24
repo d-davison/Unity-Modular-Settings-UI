@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fb9f6d465585684e982b6b57015a70f, type: 3}
-  m_Name: Gameplay
+  m_Name: Controls_Mouse
   m_EditorClassIdentifier: 
   Settings:
-  - {fileID: 11400000, guid: 4770f424d8d9b1f4cb71bdbdbd22de18, type: 2}
-  - {fileID: 11400000, guid: b85af9a92af2fc749ba7436036fcefce, type: 2}
-  - {fileID: 11400000, guid: 8d6b89f5695bc464c917f92a508c3ba5, type: 2}
+  - {fileID: 11400000, guid: 8a5a9f359f0a88c48ae715ef3c6240fe, type: 2}

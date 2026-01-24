@@ -21,7 +21,14 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
                 return;
             }
             
+            Debug.Log($"Value for {setting.settingType} is {_userSettingBool.Value}");
             toggle.isOn = _userSettingBool.Value;
+            toggle.onValueChanged.AddListener(OnToggleValueChanged);
+        }
+
+        private void OnToggleValueChanged(bool newValue)
+        {
+            _userSettingBool.ChangeSetting(newValue);
         }
     }
 }

@@ -8,9 +8,11 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
     {
         private Resolution[] _resolutions;
         
-        public override void InitialiseFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject)
+        public override void InitialiseFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject, bool setValue)
         {
-            base.InitialiseFromScriptableObject(settingTypeScriptableObject);
+            base.InitialiseFromScriptableObject(settingTypeScriptableObject, setValue);
+            
+            ChangeSetting(Value);
         }
 
         public override void ChangeSetting<T>(T newValue)

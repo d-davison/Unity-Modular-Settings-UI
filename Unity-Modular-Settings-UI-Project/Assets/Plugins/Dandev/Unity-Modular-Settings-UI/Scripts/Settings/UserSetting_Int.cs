@@ -11,14 +11,18 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
         
         protected List<string> _options;
         
-        public override void InitialiseFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject)
+        public override void InitialiseFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject, bool setValue)
         {
-            base.InitialiseFromScriptableObject(settingTypeScriptableObject);
-            Value = settingTypeScriptableObject.AsInt;
+            base.InitialiseFromScriptableObject(settingTypeScriptableObject, setValue);
+            if (setValue)
+                Value = settingTypeScriptableObject.AsInt;
+            ChangeSetting(Value);
         }
 
         public override void ChangeSetting<T>(T newValue)
         {
+            GetOptions();
+            
             if (newValue is int value)
             {
                 Value = value;

@@ -7,10 +7,13 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
     {
         public bool Value;
         
-        public override void InitialiseFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject)
+        public override void InitialiseFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject, bool setValue)
         {
-            base.InitialiseFromScriptableObject(settingTypeScriptableObject);
+            base.InitialiseFromScriptableObject(settingTypeScriptableObject, setValue);
+            if (!setValue) return;
             Value = settingTypeScriptableObject.AsBool;
+            
+            ChangeSetting(Value);
         }
 
         public override void ChangeSetting<T>(T newValue)

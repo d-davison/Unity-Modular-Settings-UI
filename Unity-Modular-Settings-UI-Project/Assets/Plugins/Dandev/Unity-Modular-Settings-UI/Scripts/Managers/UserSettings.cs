@@ -25,6 +25,7 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
                 DontDestroyOnLoad(gameObject);
                 InitialiseUserSettingsData();
                 InitialiseExtraComponents();
+                TriggerCallbacks();
             }
         }
         #endregion
@@ -73,6 +74,14 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
                 callback.Invoke();
             }
         }
+
+        public void TriggerCallbacks()
+        {
+            foreach (var settingType in _settingsDict.Keys)
+            {
+                TriggerCallbacks(settingType);
+            }
+        }
         #endregion
         
         private void InitialiseUserSettingsData()
@@ -106,6 +115,7 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
         private void InitialiseExtraComponents()
         {
             _userSettingsApplier = this.AddComponent<UserSettingsApplier>();
+            _userSettingsApplier.Initialise();
         }
         
         private void InitialiseDefaultSettingsData()

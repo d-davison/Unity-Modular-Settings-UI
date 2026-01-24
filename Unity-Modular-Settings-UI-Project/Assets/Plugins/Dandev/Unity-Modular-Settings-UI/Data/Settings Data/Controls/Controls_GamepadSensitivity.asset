@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0bdd48d3ff4bf14ba1a876762702445, type: 3}
+  m_Name: Controls_GamepadSensitivity
+  m_EditorClassIdentifier: 
+  DisplayName: Gamepad Sensitivity
+  Description: The Setting Description
+  Type: 24
+  SwitchMethod: 1
+  SaveMethod: 0
+  Impact: 0
+  SettingDataType: 1
+  AsBool: 1
+  AsFloat: 5
+  AsInt: 0
+  AsString: 
+  AsFloatLowest: 0
+  AsFloatHighest: 10
+  AsFloatUsePercentage: 0

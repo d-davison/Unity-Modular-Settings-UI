@@ -1,33 +1,31 @@
+﻿using System.Collections.Generic;
 using Dandev.Unity_Modular_Settings_UI.Scripts.Data;
-using UnityEngine;
 
 namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
 {
-    public class UserSetting_Float : UserSetting
+    public class UserSetting_Int_Fidelity : UserSetting_Int
     {
-        public float Value;
-        
         public override void InitialiseFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject, bool setValue)
         {
             base.InitialiseFromScriptableObject(settingTypeScriptableObject, setValue);
-            
-            if (setValue)
-                Value = settingTypeScriptableObject.AsFloat;
-            ChangeSetting(Value);
         }
 
         public override void ChangeSetting<T>(T newValue)
         {
-            if (newValue is float value)
-            {
-                Value = value;
-            }
-            else
-            {
-                Debug.LogError($"Invalid type for UserSetting_Float {settingType}");
-            }
-            
             base.ChangeSetting(newValue);
+        }
+
+        public override List<string> GetOptions()
+        {
+            _options ??= new List<string>();
+            _options.Clear();
+            
+            _options.Add("Low");
+            _options.Add("Medium");
+            _options.Add("High");
+            _options.Add("Ultra High");
+            
+            return base.GetOptions();
         }
     }
 }
