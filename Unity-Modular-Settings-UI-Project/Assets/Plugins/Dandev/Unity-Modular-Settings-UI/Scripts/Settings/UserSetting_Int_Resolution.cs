@@ -11,8 +11,6 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
         public override void InitialiseFromScriptableObject(SettingTypeScriptableObject settingTypeScriptableObject, bool setValue)
         {
             base.InitialiseFromScriptableObject(settingTypeScriptableObject, setValue);
-            
-            ChangeSetting(Value);
         }
 
         public override void ChangeSetting<T>(T newValue)

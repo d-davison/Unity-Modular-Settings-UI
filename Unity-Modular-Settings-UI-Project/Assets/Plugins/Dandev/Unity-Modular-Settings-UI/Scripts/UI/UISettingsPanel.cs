@@ -55,6 +55,13 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
 
                 foreach (SettingTypeScriptableObject setting in section.Settings)
                 {
+                    UserSetting userSetting = UserSettings.Instance.GetSetting<UserSetting>(setting.Type);
+                    if (userSetting == null)
+                    {
+                        Debug.Log("UserSetting is null for " + setting.Type);
+                        continue;
+                    }
+                    
                     UISettingsWidget prefab = null;
                     
                     switch (setting.SwitchMethod)
@@ -76,7 +83,6 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.UI
                     }
                     
                     UISettingsWidget widget = Instantiate(prefab, scrollRect.content);
-                    UserSetting userSetting = UserSettings.Instance.GetSetting<UserSetting>(setting.Type);
                     widget.Configure(userSetting);
                 }
             }

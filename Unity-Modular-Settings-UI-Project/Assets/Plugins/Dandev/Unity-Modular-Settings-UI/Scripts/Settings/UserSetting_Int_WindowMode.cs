@@ -26,16 +26,20 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
 
         public override List<string> GetOptions()
         {
+            if (_modes.Count == 0)
+            {
+                _modes.Add(FullScreenMode.ExclusiveFullScreen);
+                _modes.Add(FullScreenMode.FullScreenWindow);
+                _modes.Add(FullScreenMode.Windowed);
+            }
+            
             if (_options != null && _options.Count > 0)
                 return _options;
             
             _options ??= new List<string>();
             _options.Clear();
             
-            _modes.Add(FullScreenMode.ExclusiveFullScreen);
-            _modes.Add(FullScreenMode.FullScreenWindow);
-            _modes.Add(FullScreenMode.Windowed);
-
+            
             _options.AddRange(_modes.ConvertAll(mode => mode.ToString()));
 
             return _options;

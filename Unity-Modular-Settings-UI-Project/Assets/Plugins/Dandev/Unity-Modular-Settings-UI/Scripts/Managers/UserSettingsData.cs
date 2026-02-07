@@ -77,6 +77,8 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
             {
                 return setting as T;
             }
+
+            return null;
             
             Debug.LogWarning($"Tried to retrieve setting {settingType} but it was null, creating new.");
             

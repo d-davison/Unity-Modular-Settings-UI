@@ -16,6 +16,10 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Settings
             base.InitialiseFromScriptableObject(settingTypeScriptableObject, setValue);
             if (setValue)
                 Value = settingTypeScriptableObject.AsInt;
+            
+            if (settingTypeScriptableObject.dropdownOptions.Count > 0)
+                _options = settingTypeScriptableObject.dropdownOptions;
+            
             ChangeSetting(Value);
         }
 

@@ -91,6 +91,11 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
 
             if (File.Exists(filePath))
             {
+                _userSettingsData = new UserSettingsData();
+                _userSettingsData.LoadFromJson(File.ReadAllText(filePath), settingGroups);
+                _userSettingsData.InitialiseDefaultSettingsData(settingGroups);
+
+                return;
                 try
                 {
                     _userSettingsData = new UserSettingsData();
@@ -114,7 +119,7 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Managers
         
         private void InitialiseExtraComponents()
         {
-            _userSettingsApplier = this.AddComponent<UserSettingsApplier>();
+            _userSettingsApplier = this.gameObject.AddComponent<UserSettingsApplier>();
             _userSettingsApplier.Initialise();
         }
         

@@ -13,10 +13,6 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Utilities
                     return typeof(UserSetting_Int_Resolution);
                 case SettingType.WindowMode:
                     return typeof(UserSetting_Int_WindowMode);
-                case SettingType.QualityPreset:
-                case SettingType.ShadowQuality:
-                case SettingType.TextureQuality:
-                    return typeof(UserSetting_Int_Fidelity);
             }
             
             //Defaults

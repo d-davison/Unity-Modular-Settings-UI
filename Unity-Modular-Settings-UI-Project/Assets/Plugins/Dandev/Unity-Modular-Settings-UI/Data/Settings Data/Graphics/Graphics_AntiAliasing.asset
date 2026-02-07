@@ -26,3 +26,8 @@ MonoBehaviour:
   AsFloatLowest: 0
   AsFloatHighest: 100
   AsFloatUsePercentage: 0
+  dropdownOptions:
+  - No MSAA
+  - 2x
+  - 4x
+  - 8x

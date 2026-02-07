@@ -26,3 +26,7 @@ MonoBehaviour:
   AsFloatLowest: 0
   AsFloatHighest: 100
   AsFloatUsePercentage: 0
+  dropdownOptions:
+  - Easy
+  - Medium
+  - Hard
