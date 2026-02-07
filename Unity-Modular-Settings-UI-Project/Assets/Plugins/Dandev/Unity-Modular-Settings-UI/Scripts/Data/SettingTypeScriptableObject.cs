@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Dandev.Unity_Modular_Settings_UI.Scripts.Utilities;
 using UnityEngine;
 
@@ -31,5 +32,8 @@ namespace Dandev.Unity_Modular_Settings_UI.Scripts.Data
         public int AsFloatLowest = 0;
         public int AsFloatHighest = 100;
         public bool AsFloatUsePercentage = false;
+        
+        [Header("Dropdown/Selector Settings")]
+        public List<string> dropdownOptions = new List<string>();
     }
 }

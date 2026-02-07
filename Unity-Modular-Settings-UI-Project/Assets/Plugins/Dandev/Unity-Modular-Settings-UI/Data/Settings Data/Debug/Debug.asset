@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fb9f6d465585684e982b6b57015a70f, type: 3}
   m_Name: Debug
   m_EditorClassIdentifier: 
-  Settings: []
+  Settings:
+  - {fileID: 11400000, guid: 59669811c3c62ba429fc58a72ac28b50, type: 2}
+  - {fileID: 11400000, guid: 3c0ed2e16d21c034f9dd7c6e6bdeba75, type: 2}

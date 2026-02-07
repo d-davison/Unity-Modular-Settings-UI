@@ -21,7 +21,7 @@ MonoBehaviour:
   SettingDataType: 2
   AsBool: 0
   AsFloat: 0
-  AsInt: 0
+  AsInt: 2
   AsString: 
   AsFloatLowest: 0
   AsFloatHighest: 100
